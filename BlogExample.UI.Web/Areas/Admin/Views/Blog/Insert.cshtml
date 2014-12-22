@@ -1,0 +1,45 @@
+﻿@{
+    ViewBag.Title = "Insert";
+    Layout = "~/Areas/Admin/Views/Shared/_adminLayout.cshtml";
+}
+@model BlogModel
+<div class="panel panel-default">
+
+    <div class="panel-heading">
+        Blog Ekleme
+    </div>
+    <div id="result" class="col-md-12"></div>
+    <div class="panel-body">
+        @using (Html.BeginForm(null, null, FormMethod.Post, new { enctype = "multipart/form-data", @id = "frmBlog" }))
+        {
+
+            @Html.Partial("Partial/_blogForm", Model)
+            @Html.SubmitButton("Kaydet")
+        }
+
+
+
+
+
+
+    </div>
+</div>
+@section scripts
+    {
+    <script src="~/Scripts/Plugins/Jquery/jquery-form.min.js"></script>
+    <script>
+        $('#frmBlog').ajaxForm({
+            success: function (response) {
+                console.log(response);
+            }
+        });
+    </script>
+<script src="~/Areas/Admin/Scripts/plugins/jquery.tagsinput.min.js"></script>
+    <script>
+        $('#etiket').tagsInput();
+    </script>
+
+}
+@section styles{
+<link href="~/Areas/Admin/Content/css/plugins/jquery.tagsinput.css" rel="stylesheet" />
+}

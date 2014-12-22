@@ -1,0 +1,29 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@model PagedList.IPagedList<BlogExample.Data.Orm.Blog>
+
+@using PagedList.Mvc;
+@using PagedList;
+<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+    @foreach (var item in Model)
+    {
+        <div class="post-preview">
+            <a href="@item.SiteMenu.PageSlug/@item.PageSlug">
+                <h2 class="post-title">
+                   @item.Title
+                </h2>
+                <h3 class="post-subtitle">
+                    @item.Description
+                </h3>
+            </a>
+            <p class="post-meta">Posted by <a href="#">@item.AdminUser.UserName</a> on September 24, 2014</p>
+        </div>
+        <hr>
+    }
+  
+@Html.PagedListPager(Model, x => Url.Action("MenuContent", new { menuSlug=ViewBag.MenuSlug,page = x }), PagedListRenderOptions.PageNumbersOnly)
+ 
+</div>
+
+

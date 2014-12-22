@@ -1,0 +1,24 @@
+﻿@model BlogModel
+<div class="form-group">
+    <label>Blog Başlığı</label>
+    @Html.TextBoxFor(x => x.Title, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.Title)
+</div>
+<div class="form-group">
+    <label>Açıklama</label>
+    @Html.TextAreaFor(x => x.Description, new {@class="form-control"})
+    @Html.ValidationMessageFor(x=>x.Description)
+</div>
+<div class="form-group">
+    <label>İçerik</label>
+    @Html.TextAreaFor(x => x.HtmlContent, new { @class = "form-control ckeditor"})
+    @Html.ValidationMessageFor(x=>x.HtmlContent)
+</div>
+<div class="form-group">
+    <label>Etiketler</label>
+    @Html.TextBoxFor(x => x.Tags, new { @class = "form-control",@id="etiket"})
+</div>
+<div class="form-group">
+    <label>Slider Resmi</label>
+    <input type="file" name="resim" />
+</div>

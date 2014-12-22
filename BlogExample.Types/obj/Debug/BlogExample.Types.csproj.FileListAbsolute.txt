@@ -1,0 +1,4 @@
+C:\Users\ilker.erhalim\documents\visual studio 2013\Projects\BlogExample\BlogExample.Types\bin\Debug\BlogExample.Types.dll
+C:\Users\ilker.erhalim\documents\visual studio 2013\Projects\BlogExample\BlogExample.Types\bin\Debug\BlogExample.Types.pdb
+C:\Users\ilker.erhalim\documents\visual studio 2013\Projects\BlogExample\BlogExample.Types\obj\Debug\BlogExample.Types.dll
+C:\Users\ilker.erhalim\documents\visual studio 2013\Projects\BlogExample\BlogExample.Types\obj\Debug\BlogExample.Types.pdb

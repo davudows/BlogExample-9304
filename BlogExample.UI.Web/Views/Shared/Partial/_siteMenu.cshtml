@@ -1,0 +1,22 @@
+﻿@model List<BlogExample.UI.Web.Models.MenuModel>
+<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+    <ul class="nav navbar-nav navbar-right">
+        @foreach (var item in Model)
+        {
+            <li>
+                <a href="@item.PageSlug">@item.Name</a>
+                @if(item.SubMenus.Any())
+                {
+                    <ul>
+                        @foreach(var subitem in item.SubMenus)
+                        {
+                            <li ><a href="@subitem.PageSlug">@subitem.Name</a></li>
+                        }
+                    </ul>
+                }
+            </li>
+        }
+      
+     
+    </ul>
+</div>

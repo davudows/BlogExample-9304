@@ -1,0 +1,33 @@
+﻿
+@{
+    ViewBag.Title = "BlogContent";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@model BlogExample.UI.Web.Models.BlogDetailModel
+
+@Html.Raw(Model.Blog.BlogContent)
+
+<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+    @foreach (var item in Model.OtherBlogs)
+    {
+        <div class="post-preview">
+            <a href="@item.SiteMenu.PageSlug/@item.PageSlug">
+                <h2 class="post-title">
+                    @item.Title
+                </h2>
+                <h3 class="post-subtitle">
+                    @item.Description
+                </h3>
+            </a>
+            <p class="post-meta">Posted by <a href="#">@item.AdminUser.UserName</a> on September 24, 2014</p>
+        </div>
+        <hr>
+    }
+
+
+
+</div>
+
+
+
+
