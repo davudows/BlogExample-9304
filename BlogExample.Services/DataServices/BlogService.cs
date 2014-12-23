@@ -41,7 +41,7 @@ namespace BlogExample.Services.DataServices
             entity.AddDate = DateTime.Now;
             Db.Blogs.Add(entity);
             Db.SaveChanges();
-            return Success("Blogunuz başarıyla eklenmiştir");
+            return Success("Blogunuz başarıyla eklenmiştir.");
         }
 
         public override DataRequestResult Delete(int id)
