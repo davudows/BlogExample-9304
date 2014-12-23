@@ -18,3 +18,23 @@ C:\Users\ilker.erhalim\documents\visual studio 2013\Projects\BlogExample\BlogExa
 C:\Users\ilker.erhalim\documents\visual studio 2013\Projects\BlogExample\BlogExample.Services\bin\Debug\PagedList.Mvc.dll
 C:\Users\ilker.erhalim\documents\visual studio 2013\Projects\BlogExample\BlogExample.Services\bin\Debug\PagedList.xml
 C:\Users\ilker.erhalim\documents\visual studio 2013\Projects\BlogExample\BlogExample.Services\bin\Debug\PagedList.Mvc.xml
+C:\Users\Erhan\Documents\GitHub\BlogExample-9304\BlogExample.Services\bin\Debug\BlogExample.Services.dll.config
+C:\Users\Erhan\Documents\GitHub\BlogExample-9304\BlogExample.Services\bin\Debug\BlogExample.Services.dll
+C:\Users\Erhan\Documents\GitHub\BlogExample-9304\BlogExample.Services\bin\Debug\BlogExample.Services.pdb
+C:\Users\Erhan\Documents\GitHub\BlogExample-9304\BlogExample.Services\bin\Debug\BlogExample.Data.dll
+C:\Users\Erhan\Documents\GitHub\BlogExample-9304\BlogExample.Services\bin\Debug\BlogExample.Extensions.dll
+C:\Users\Erhan\Documents\GitHub\BlogExample-9304\BlogExample.Services\bin\Debug\BlogExample.Types.dll
+C:\Users\Erhan\Documents\GitHub\BlogExample-9304\BlogExample.Services\bin\Debug\EntityFramework.dll
+C:\Users\Erhan\Documents\GitHub\BlogExample-9304\BlogExample.Services\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Erhan\Documents\GitHub\BlogExample-9304\BlogExample.Services\bin\Debug\PagedList.dll
+C:\Users\Erhan\Documents\GitHub\BlogExample-9304\BlogExample.Services\bin\Debug\PagedList.Mvc.dll
+C:\Users\Erhan\Documents\GitHub\BlogExample-9304\BlogExample.Services\bin\Debug\BlogExample.Data.pdb
+C:\Users\Erhan\Documents\GitHub\BlogExample-9304\BlogExample.Services\bin\Debug\BlogExample.Extensions.pdb
+C:\Users\Erhan\Documents\GitHub\BlogExample-9304\BlogExample.Services\bin\Debug\BlogExample.Types.pdb
+C:\Users\Erhan\Documents\GitHub\BlogExample-9304\BlogExample.Services\bin\Debug\EntityFramework.xml
+C:\Users\Erhan\Documents\GitHub\BlogExample-9304\BlogExample.Services\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Erhan\Documents\GitHub\BlogExample-9304\BlogExample.Services\bin\Debug\PagedList.xml
+C:\Users\Erhan\Documents\GitHub\BlogExample-9304\BlogExample.Services\bin\Debug\PagedList.Mvc.xml
+C:\Users\Erhan\Documents\GitHub\BlogExample-9304\BlogExample.Services\obj\Debug\BlogExample.Services.csprojResolveAssemblyReference.cache
+C:\Users\Erhan\Documents\GitHub\BlogExample-9304\BlogExample.Services\obj\Debug\BlogExample.Services.dll
+C:\Users\Erhan\Documents\GitHub\BlogExample-9304\BlogExample.Services\obj\Debug\BlogExample.Services.pdb

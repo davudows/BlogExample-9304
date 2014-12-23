@@ -13,10 +13,10 @@ namespace BlogExample.Data.Orm
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class BlogExampleEntities : DbContext
+    public partial class ErhanDbEntities : DbContext
     {
-        public BlogExampleEntities()
-            : base("name=BlogExampleEntities")
+        public ErhanDbEntities()
+            : base("name=ErhanDbEntities")
         {
         }
     
@@ -32,7 +32,6 @@ namespace BlogExample.Data.Orm
         public virtual DbSet<Category> Categories { get; set; }
         public virtual DbSet<Language> Languages { get; set; }
         public virtual DbSet<SiteMenu> SiteMenus { get; set; }
-        public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
         public virtual DbSet<User> Users { get; set; }
     }
 }

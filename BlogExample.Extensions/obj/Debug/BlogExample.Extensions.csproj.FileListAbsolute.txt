@@ -3,3 +3,8 @@ C:\Users\ilker.erhalim\documents\visual studio 2013\Projects\BlogExample\BlogExa
 C:\Users\ilker.erhalim\documents\visual studio 2013\Projects\BlogExample\BlogExample.Extensions\obj\Debug\BlogExample.Extensions.csprojResolveAssemblyReference.cache
 C:\Users\ilker.erhalim\documents\visual studio 2013\Projects\BlogExample\BlogExample.Extensions\obj\Debug\BlogExample.Extensions.dll
 C:\Users\ilker.erhalim\documents\visual studio 2013\Projects\BlogExample\BlogExample.Extensions\obj\Debug\BlogExample.Extensions.pdb
+C:\Users\Erhan\Documents\GitHub\BlogExample-9304\BlogExample.Extensions\bin\Debug\BlogExample.Extensions.dll
+C:\Users\Erhan\Documents\GitHub\BlogExample-9304\BlogExample.Extensions\bin\Debug\BlogExample.Extensions.pdb
+C:\Users\Erhan\Documents\GitHub\BlogExample-9304\BlogExample.Extensions\obj\Debug\BlogExample.Extensions.csprojResolveAssemblyReference.cache
+C:\Users\Erhan\Documents\GitHub\BlogExample-9304\BlogExample.Extensions\obj\Debug\BlogExample.Extensions.dll
+C:\Users\Erhan\Documents\GitHub\BlogExample-9304\BlogExample.Extensions\obj\Debug\BlogExample.Extensions.pdb

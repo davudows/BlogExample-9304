@@ -11,10 +11,10 @@ namespace BlogExample.Services.DataServices
     public abstract class ServiceBase<T> : IDisposable
     {
 
-        protected BlogExampleEntities Db;
+        protected ErhanDbEntities Db;
         protected ServiceBase()
         {
-            Db = new BlogExampleEntities();
+            Db = new ErhanDbEntities();
 
         }
 

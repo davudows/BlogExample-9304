@@ -8,3 +8,13 @@ C:\Users\ilker.erhalim\documents\visual studio 2013\Projects\BlogExample\BlogExa
 C:\Users\ilker.erhalim\documents\visual studio 2013\Projects\BlogExample\BlogExample.Data\obj\Debug\BlogExample.Data.csprojResolveAssemblyReference.cache
 C:\Users\ilker.erhalim\documents\visual studio 2013\Projects\BlogExample\BlogExample.Data\obj\Debug\BlogExample.Data.dll
 C:\Users\ilker.erhalim\documents\visual studio 2013\Projects\BlogExample\BlogExample.Data\obj\Debug\BlogExample.Data.pdb
+C:\Users\Erhan\Documents\GitHub\BlogExample-9304\BlogExample.Data\bin\Debug\BlogExample.Data.dll.config
+C:\Users\Erhan\Documents\GitHub\BlogExample-9304\BlogExample.Data\bin\Debug\BlogExample.Data.dll
+C:\Users\Erhan\Documents\GitHub\BlogExample-9304\BlogExample.Data\bin\Debug\BlogExample.Data.pdb
+C:\Users\Erhan\Documents\GitHub\BlogExample-9304\BlogExample.Data\bin\Debug\EntityFramework.dll
+C:\Users\Erhan\Documents\GitHub\BlogExample-9304\BlogExample.Data\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Erhan\Documents\GitHub\BlogExample-9304\BlogExample.Data\bin\Debug\EntityFramework.xml
+C:\Users\Erhan\Documents\GitHub\BlogExample-9304\BlogExample.Data\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Erhan\Documents\GitHub\BlogExample-9304\BlogExample.Data\obj\Debug\BlogExample.Data.csprojResolveAssemblyReference.cache
+C:\Users\Erhan\Documents\GitHub\BlogExample-9304\BlogExample.Data\obj\Debug\BlogExample.Data.dll
+C:\Users\Erhan\Documents\GitHub\BlogExample-9304\BlogExample.Data\obj\Debug\BlogExample.Data.pdb

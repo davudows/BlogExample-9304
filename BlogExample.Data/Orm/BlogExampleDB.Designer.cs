@@ -1,4 +1,4 @@
-﻿// T4 code generation is enabled for model 'C:\Users\ilker.erhalim\Documents\Visual Studio 2013\Projects\BlogExample\BlogExample.Data\Orm\BlogExampleDB.edmx'. 
+﻿// T4 code generation is enabled for model 'C:\Users\Erhan\Documents\GitHub\BlogExample-9304\BlogExample.Data\Orm\BlogExampleDB.edmx'. 
 // To enable legacy code generation, change the value of the 'Code Generation Strategy' designer
 // property to 'Legacy ObjectContext'. This property is available in the Properties Window when the model
 // is open in the designer.

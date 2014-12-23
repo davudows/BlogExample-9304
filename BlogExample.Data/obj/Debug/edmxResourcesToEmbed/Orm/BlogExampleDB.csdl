@@ -1,40 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Schema Namespace="BlogExampleModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
-  <EntityContainer Name="BlogExampleEntities" annotation:LazyLoadingEnabled="true">
-    <EntitySet Name="AdminMenus" EntityType="BlogExampleModel.AdminMenu" />
-    <EntitySet Name="AdminUsers" EntityType="BlogExampleModel.AdminUser" />
-    <EntitySet Name="AdminUserAuthories" EntityType="BlogExampleModel.AdminUserAuthory" />
-    <EntitySet Name="Blogs" EntityType="BlogExampleModel.Blog" />
-    <EntitySet Name="Categories" EntityType="BlogExampleModel.Category" />
-    <EntitySet Name="Languages" EntityType="BlogExampleModel.Language" />
-    <EntitySet Name="SiteMenus" EntityType="BlogExampleModel.SiteMenu" />
-    <EntitySet Name="sysdiagrams" EntityType="BlogExampleModel.sysdiagram" />
-    <EntitySet Name="Users" EntityType="BlogExampleModel.User" />
-    <AssociationSet Name="FK_AdminUserAuthory_AdminMenu" Association="BlogExampleModel.FK_AdminUserAuthory_AdminMenu">
-      <End Role="AdminMenu" EntitySet="AdminMenus" />
-      <End Role="AdminUserAuthory" EntitySet="AdminUserAuthories" />
-    </AssociationSet>
-    <AssociationSet Name="FK_AdminUserAuthory_AdminUser" Association="BlogExampleModel.FK_AdminUserAuthory_AdminUser">
-      <End Role="AdminUser" EntitySet="AdminUsers" />
-      <End Role="AdminUserAuthory" EntitySet="AdminUserAuthories" />
-    </AssociationSet>
-    <AssociationSet Name="FK_Blog_AdminUser" Association="BlogExampleModel.FK_Blog_AdminUser">
-      <End Role="AdminUser" EntitySet="AdminUsers" />
-      <End Role="Blog" EntitySet="Blogs" />
-    </AssociationSet>
-    <AssociationSet Name="FK_Blog_SiteMenu" Association="BlogExampleModel.FK_Blog_SiteMenu">
-      <End Role="SiteMenu" EntitySet="SiteMenus" />
-      <End Role="Blog" EntitySet="Blogs" />
-    </AssociationSet>
-    <AssociationSet Name="FK_Category_SiteMenu" Association="BlogExampleModel.FK_Category_SiteMenu">
-      <End Role="SiteMenu" EntitySet="SiteMenus" />
-      <End Role="Category" EntitySet="Categories" />
-    </AssociationSet>
-    <AssociationSet Name="FK_SiteMenu_Language" Association="BlogExampleModel.FK_SiteMenu_Language">
-      <End Role="Language" EntitySet="Languages" />
-      <End Role="SiteMenu" EntitySet="SiteMenus" />
-    </AssociationSet>
-  </EntityContainer>
+<Schema Namespace="ErhanDbModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
   <EntityType Name="AdminMenu">
     <Key>
       <PropertyRef Name="Id" />
@@ -43,20 +8,20 @@
     <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="SortOrder" Type="Int32" Nullable="false" />
     <Property Name="Adress" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-    <NavigationProperty Name="AdminUserAuthories" Relationship="BlogExampleModel.FK_AdminUserAuthory_AdminMenu" FromRole="AdminMenu" ToRole="AdminUserAuthory" />
+    <NavigationProperty Name="AdminUserAuthories" Relationship="Self.FK_AdminUserAuthory_AdminMenu" FromRole="AdminMenu" ToRole="AdminUserAuthory" />
   </EntityType>
   <EntityType Name="AdminUser">
     <Key>
       <PropertyRef Name="Id" />
     </Key>
     <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="UserName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-    <Property Name="Password" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="UserName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="Mail" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
     <Property Name="AddDate" Type="DateTime" Nullable="false" Precision="0" />
     <Property Name="IsDeleted" Type="Boolean" Nullable="false" />
-    <NavigationProperty Name="AdminUserAuthories" Relationship="BlogExampleModel.FK_AdminUserAuthory_AdminUser" FromRole="AdminUser" ToRole="AdminUserAuthory" />
-    <NavigationProperty Name="Blogs" Relationship="BlogExampleModel.FK_Blog_AdminUser" FromRole="AdminUser" ToRole="Blog" />
+    <NavigationProperty Name="AdminUserAuthories" Relationship="Self.FK_AdminUserAuthory_AdminUser" FromRole="AdminUser" ToRole="AdminUserAuthory" />
+    <NavigationProperty Name="Blogs" Relationship="Self.FK_Blog_AdminUser" FromRole="AdminUser" ToRole="Blog" />
   </EntityType>
   <EntityType Name="AdminUserAuthory">
     <Key>
@@ -65,8 +30,8 @@
     <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="AdminId" Type="Int32" Nullable="false" />
     <Property Name="MenuId" Type="Int32" Nullable="false" />
-    <NavigationProperty Name="AdminMenu" Relationship="BlogExampleModel.FK_AdminUserAuthory_AdminMenu" FromRole="AdminUserAuthory" ToRole="AdminMenu" />
-    <NavigationProperty Name="AdminUser" Relationship="BlogExampleModel.FK_AdminUserAuthory_AdminUser" FromRole="AdminUserAuthory" ToRole="AdminUser" />
+    <NavigationProperty Name="AdminMenu" Relationship="Self.FK_AdminUserAuthory_AdminMenu" FromRole="AdminUserAuthory" ToRole="AdminMenu" />
+    <NavigationProperty Name="AdminUser" Relationship="Self.FK_AdminUserAuthory_AdminUser" FromRole="AdminUserAuthory" ToRole="AdminUser" />
   </EntityType>
   <EntityType Name="Blog">
     <Key>
@@ -85,8 +50,8 @@
     <Property Name="LastUpdate" Type="DateTime" Precision="0" />
     <Property Name="IsActive" Type="Boolean" Nullable="false" />
     <Property Name="IsDeleted" Type="Boolean" Nullable="false" />
-    <NavigationProperty Name="AdminUser" Relationship="BlogExampleModel.FK_Blog_AdminUser" FromRole="Blog" ToRole="AdminUser" />
-    <NavigationProperty Name="SiteMenu" Relationship="BlogExampleModel.FK_Blog_SiteMenu" FromRole="Blog" ToRole="SiteMenu" />
+    <NavigationProperty Name="AdminUser" Relationship="Self.FK_Blog_AdminUser" FromRole="Blog" ToRole="AdminUser" />
+    <NavigationProperty Name="SiteMenu" Relationship="Self.FK_Blog_SiteMenu" FromRole="Blog" ToRole="SiteMenu" />
   </EntityType>
   <EntityType Name="Category">
     <Key>
@@ -95,12 +60,12 @@
     <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="TopCategoryId" Type="Int32" Nullable="false" />
     <Property Name="MenuId" Type="Int32" Nullable="false" />
-    <Property Name="CategoryName" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="CategoryName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
     <Property Name="SortOrder" Type="Int32" Nullable="false" />
     <Property Name="AddDate" Type="DateTime" Nullable="false" Precision="0" />
     <Property Name="IsDeleted" Type="Boolean" Nullable="false" />
-    <NavigationProperty Name="SiteMenu" Relationship="BlogExampleModel.FK_Category_SiteMenu" FromRole="Category" ToRole="SiteMenu" />
+    <NavigationProperty Name="SiteMenu" Relationship="Self.FK_Category_SiteMenu" FromRole="Category" ToRole="SiteMenu" />
   </EntityType>
   <EntityType Name="Language">
     <Key>
@@ -109,7 +74,7 @@
     <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="Slug" Type="String" MaxLength="2" FixedLength="false" Unicode="true" />
     <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-    <NavigationProperty Name="SiteMenus" Relationship="BlogExampleModel.FK_SiteMenu_Language" FromRole="Language" ToRole="SiteMenu" />
+    <NavigationProperty Name="SiteMenus" Relationship="Self.FK_SiteMenu_Language" FromRole="Language" ToRole="SiteMenu" />
   </EntityType>
   <EntityType Name="SiteMenu">
     <Key>
@@ -122,28 +87,18 @@
     <Property Name="SortOrder" Type="Int32" Nullable="false" />
     <Property Name="PageSlug" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
     <Property Name="IsDeleted" Type="Boolean" Nullable="false" />
-    <NavigationProperty Name="Blogs" Relationship="BlogExampleModel.FK_Blog_SiteMenu" FromRole="SiteMenu" ToRole="Blog" />
-    <NavigationProperty Name="Categories" Relationship="BlogExampleModel.FK_Category_SiteMenu" FromRole="SiteMenu" ToRole="Category" />
-    <NavigationProperty Name="Language" Relationship="BlogExampleModel.FK_SiteMenu_Language" FromRole="SiteMenu" ToRole="Language" />
-  </EntityType>
-  <EntityType Name="sysdiagram">
-    <Key>
-      <PropertyRef Name="diagram_id" />
-    </Key>
-    <Property Name="name" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
-    <Property Name="principal_id" Type="Int32" Nullable="false" />
-    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="version" Type="Int32" />
-    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <NavigationProperty Name="Blogs" Relationship="Self.FK_Blog_SiteMenu" FromRole="SiteMenu" ToRole="Blog" />
+    <NavigationProperty Name="Categories" Relationship="Self.FK_Category_SiteMenu" FromRole="SiteMenu" ToRole="Category" />
+    <NavigationProperty Name="Language" Relationship="Self.FK_SiteMenu_Language" FromRole="SiteMenu" ToRole="Language" />
   </EntityType>
   <EntityType Name="User">
     <Key>
       <PropertyRef Name="Id" />
     </Key>
     <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="UserName" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
-    <Property Name="Password" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
-    <Property Name="Email" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="UserName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Password" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Email" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="Phone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="IsInBulletin" Type="Boolean" Nullable="false" />
     <Property Name="ConfirmCode" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
@@ -152,8 +107,8 @@
     <Property Name="IsDeleted" Type="Boolean" Nullable="false" />
   </EntityType>
   <Association Name="FK_AdminUserAuthory_AdminMenu">
-    <End Type="BlogExampleModel.AdminMenu" Role="AdminMenu" Multiplicity="1" />
-    <End Type="BlogExampleModel.AdminUserAuthory" Role="AdminUserAuthory" Multiplicity="*" />
+    <End Role="AdminMenu" Type="Self.AdminMenu" Multiplicity="1" />
+    <End Role="AdminUserAuthory" Type="Self.AdminUserAuthory" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="AdminMenu">
         <PropertyRef Name="Id" />
@@ -164,8 +119,8 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_AdminUserAuthory_AdminUser">
-    <End Type="BlogExampleModel.AdminUser" Role="AdminUser" Multiplicity="1" />
-    <End Type="BlogExampleModel.AdminUserAuthory" Role="AdminUserAuthory" Multiplicity="*" />
+    <End Role="AdminUser" Type="Self.AdminUser" Multiplicity="1" />
+    <End Role="AdminUserAuthory" Type="Self.AdminUserAuthory" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="AdminUser">
         <PropertyRef Name="Id" />
@@ -176,8 +131,8 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_Blog_AdminUser">
-    <End Type="BlogExampleModel.AdminUser" Role="AdminUser" Multiplicity="1" />
-    <End Type="BlogExampleModel.Blog" Role="Blog" Multiplicity="*" />
+    <End Role="AdminUser" Type="Self.AdminUser" Multiplicity="1" />
+    <End Role="Blog" Type="Self.Blog" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="AdminUser">
         <PropertyRef Name="Id" />
@@ -188,8 +143,8 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_Blog_SiteMenu">
-    <End Type="BlogExampleModel.SiteMenu" Role="SiteMenu" Multiplicity="1" />
-    <End Type="BlogExampleModel.Blog" Role="Blog" Multiplicity="*" />
+    <End Role="SiteMenu" Type="Self.SiteMenu" Multiplicity="1" />
+    <End Role="Blog" Type="Self.Blog" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="SiteMenu">
         <PropertyRef Name="Id" />
@@ -200,8 +155,8 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_Category_SiteMenu">
-    <End Type="BlogExampleModel.SiteMenu" Role="SiteMenu" Multiplicity="1" />
-    <End Type="BlogExampleModel.Category" Role="Category" Multiplicity="*" />
+    <End Role="SiteMenu" Type="Self.SiteMenu" Multiplicity="1" />
+    <End Role="Category" Type="Self.Category" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="SiteMenu">
         <PropertyRef Name="Id" />
@@ -212,8 +167,8 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_SiteMenu_Language">
-    <End Type="BlogExampleModel.Language" Role="Language" Multiplicity="1" />
-    <End Type="BlogExampleModel.SiteMenu" Role="SiteMenu" Multiplicity="*" />
+    <End Role="Language" Type="Self.Language" Multiplicity="1" />
+    <End Role="SiteMenu" Type="Self.SiteMenu" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Language">
         <PropertyRef Name="Id" />
@@ -223,4 +178,38 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <EntityContainer Name="ErhanDbEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="AdminMenus" EntityType="Self.AdminMenu" />
+    <EntitySet Name="AdminUsers" EntityType="Self.AdminUser" />
+    <EntitySet Name="AdminUserAuthories" EntityType="Self.AdminUserAuthory" />
+    <EntitySet Name="Blogs" EntityType="Self.Blog" />
+    <EntitySet Name="Categories" EntityType="Self.Category" />
+    <EntitySet Name="Languages" EntityType="Self.Language" />
+    <EntitySet Name="SiteMenus" EntityType="Self.SiteMenu" />
+    <EntitySet Name="Users" EntityType="Self.User" />
+    <AssociationSet Name="FK_AdminUserAuthory_AdminMenu" Association="Self.FK_AdminUserAuthory_AdminMenu">
+      <End Role="AdminMenu" EntitySet="AdminMenus" />
+      <End Role="AdminUserAuthory" EntitySet="AdminUserAuthories" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AdminUserAuthory_AdminUser" Association="Self.FK_AdminUserAuthory_AdminUser">
+      <End Role="AdminUser" EntitySet="AdminUsers" />
+      <End Role="AdminUserAuthory" EntitySet="AdminUserAuthories" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Blog_AdminUser" Association="Self.FK_Blog_AdminUser">
+      <End Role="AdminUser" EntitySet="AdminUsers" />
+      <End Role="Blog" EntitySet="Blogs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Blog_SiteMenu" Association="Self.FK_Blog_SiteMenu">
+      <End Role="SiteMenu" EntitySet="SiteMenus" />
+      <End Role="Blog" EntitySet="Blogs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Category_SiteMenu" Association="Self.FK_Category_SiteMenu">
+      <End Role="SiteMenu" EntitySet="SiteMenus" />
+      <End Role="Category" EntitySet="Categories" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SiteMenu_Language" Association="Self.FK_SiteMenu_Language">
+      <End Role="Language" EntitySet="Languages" />
+      <End Role="SiteMenu" EntitySet="SiteMenus" />
+    </AssociationSet>
+  </EntityContainer>
 </Schema>
