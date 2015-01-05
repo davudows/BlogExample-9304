@@ -13,6 +13,6 @@
 @Html.BsDropdownFor(x=>x.LangId,"langList","Seçiniz")
 <div class="form-group">
     <label>Üst Menü</label>
-    @Html.DropDownListFor(x => x.TopMenuId, ((IEnumerable<SelectListItem>)ViewData["menuList"]), "Yeni üst menü oluşturmak istiyorum", new { @class = "form-control" })
+    @Html.DropDownListFor(x => x.TopMenuId, ((IEnumerable<SelectListItem>)ViewData["menuList"]), "Yeni üst menü oluşturmak istiyorum..", new { @class = "form-control" })
 </div>
 

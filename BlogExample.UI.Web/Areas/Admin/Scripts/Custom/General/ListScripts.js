@@ -1,10 +1,11 @@
-﻿$('.deleteButton').click(function () {
-    var adress = $(this).attr('data-action');
+﻿$('.deleteButton').click(function () {    
+    debugger;
 
+    var adress = $(this).attr('data-action');
     var id = $(this).attr('data-recordid');
 
     var options = {
-        type: 'DELETE',
+        type: 'POST',
         url: adress + id,
         success: function (response) {
             $('#forDelete_' + recordId).fadeOut();

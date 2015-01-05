@@ -76,9 +76,9 @@ namespace BlogExample.UI.Web.Areas.Admin.Controllers
 
         
         [OutputCache(Duration=1)]
-        public ViewResult List(int id = 1)
+        public ViewResult List()
         {
-            List<SiteMenu> siteMenus = Services.SiteMenu.GetAllByLangId(id);
+            List<SiteMenu> siteMenus = Services.SiteMenu.GetAll();
             return View(siteMenus);
         }
 
@@ -86,7 +86,7 @@ namespace BlogExample.UI.Web.Areas.Admin.Controllers
 
         #region Delete
 
-        [HttpDelete]
+        [HttpPost]
         public JsonResult Delete(int id)
         {
             DataRequestResult result = Services.SiteMenu.Delete(id);
